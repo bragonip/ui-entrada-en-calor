@@ -14,7 +14,14 @@ class Str{
     fun words(palabra:String):Int{
         return 1+ palabra.count {char -> char.isWhitespace() }
     }
+
+    fun parrafos(texto:String):Int{
+        return 1+ texto.count {char -> char == '\n' }
+    }
 }
+
+
+
 
 fun main(args: Array<String>) {
     val str = Str()
@@ -24,5 +31,9 @@ fun main(args: Array<String>) {
     println(str.vowels("neuquen"))
     println(str.vowels("Ácido clorhídrico"))
     println(str.words("construcción de interfaces de usuario"))
+    println("parrafo 1 \n" +
+            "parrafo 2")
+    println(str.parrafos("parrafo 1 \n" +
+            "parrafo 2"))
 
 }
